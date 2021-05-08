@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "316211210510",
+    "project_id": "educationaries-app",
+    "storage_bucket": "educationaries-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316211210510:android:7e3e23f24e949643afcf5f",
+        "android_client_info": {
+          "package_name": "com.srl.educationariesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316211210510-nrvunshcdaighgvefcoup7in26pv7sq1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.srl.educationariesapp",
+            "certificate_hash": "68988f3e1dc8994be3031760260ffe239effecc2"
+          }
+        },
+        {
+          "client_id": "316211210510-392p29j7po3svak7iebsa9hrruf0motj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_u5tXK-vAn0yQP8NfI70z8MbkYKZd_HQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316211210510-392p29j7po3svak7iebsa9hrruf0motj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "316211210510-8cb89tcst1l07n4tlm89gk9lbi7i3dea.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.srl.educationariesapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
