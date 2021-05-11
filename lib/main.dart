@@ -95,7 +95,6 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.movie,
-              color: Color(0xFF9E9E9E),
               size: 24,
             ),
             label: 'Movies',

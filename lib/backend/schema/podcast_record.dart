@@ -13,15 +13,15 @@ abstract class PodcastRecord
   static Serializer<PodcastRecord> get serializer => _$podcastRecordSerializer;
 
   @nullable
-  @BuiltValueField(wireName: 'Audio')
-  String get audio;
+  @BuiltValueField(wireName: 'Video')
+  String get video;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(PodcastRecordBuilder builder) =>
-      builder..audio = '';
+      builder..video = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Podcast');
@@ -36,13 +36,13 @@ abstract class PodcastRecord
 }
 
 Map<String, dynamic> createPodcastRecordData({
-  String audio,
+  String video,
 }) =>
     serializers.serializeWith(
-        PodcastRecord.serializer, PodcastRecord((p) => p..audio = audio));
+        PodcastRecord.serializer, PodcastRecord((p) => p..video = video));
 
 PodcastRecord get dummyPodcastRecord {
-  final builder = PodcastRecordBuilder()..audio = dummyVideoPath;
+  final builder = PodcastRecordBuilder()..video = dummyVideoPath;
   return builder.build();
 }
 

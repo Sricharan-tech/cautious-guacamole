@@ -1,5 +1,6 @@
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
+import '../home_details_page/home_details_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -65,11 +66,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         color: Color(0xFFF5F5F5),
                         elevation: 23,
-                        child: Image.network(
-                          gridViewHomeRecord.image,
-                          width: 100,
-                          height: 100,
-                          fit: BoxFit.cover,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HomeDetailsPageWidget(
+                                      detailText: gridViewHomeRecord,
+                                      trailerVideo:
+                                          gridViewHomeRecord.trailerVideo,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Image.network(
+                                gridViewHomeRecord.image,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          ],
                         ),
                       );
                     },

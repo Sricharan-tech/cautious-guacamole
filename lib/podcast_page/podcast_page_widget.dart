@@ -36,7 +36,7 @@ class _PodcastPageWidgetState extends State<PodcastPageWidget> {
               child: StreamBuilder<List<PodcastRecord>>(
                 stream: queryPodcastRecord(
                   queryBuilder: (podcastRecord) =>
-                      podcastRecord.orderBy('Audio'),
+                      podcastRecord.orderBy('Video'),
                 ),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
@@ -69,7 +69,7 @@ class _PodcastPageWidgetState extends State<PodcastPageWidget> {
                         color: Color(0xFFF5F5F5),
                         elevation: 23,
                         child: FlutterFlowVideoPlayer(
-                          path: gridViewPodcastRecord.audio,
+                          path: gridViewPodcastRecord.video,
                           videoType: VideoType.network,
                           autoPlay: false,
                           looping: true,
