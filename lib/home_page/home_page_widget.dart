@@ -78,6 +78,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       detailText: gridViewHomeRecord,
                                       trailerVideo:
                                           gridViewHomeRecord.trailerVideo,
+                                      watch: gridViewHomeRecord.watch,
                                     ),
                                   ),
                                 );

@@ -1,16 +1,20 @@
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_video_player.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
+import '../watch/watch_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeDetailsPageWidget extends StatefulWidget {
-  HomeDetailsPageWidget({Key key, this.detailText, this.trailerVideo})
+  HomeDetailsPageWidget(
+      {Key key, this.detailText, this.trailerVideo, this.watch})
       : super(key: key);
 
   final HomeRecord detailText;
   final String trailerVideo;
+  final String watch;
 
   @override
   _HomeDetailsPageWidgetState createState() => _HomeDetailsPageWidgetState();
@@ -28,7 +32,7 @@ class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 1, 0, 1),
+              padding: EdgeInsets.fromLTRB(0, 1, 0, 12),
               child: FlutterFlowVideoPlayer(
                 path: widget.trailerVideo,
                 videoType: VideoType.network,
@@ -118,6 +122,59 @@ class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
                   ),
                 );
               },
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 123, 0, 0),
+              child: FFButtonWidget(
+                onPressed: () {
+                  print('Button pressed ...');
+                },
+                text: 'Read ',
+                options: FFButtonOptions(
+                  width: 130,
+                  height: 40,
+                  color: FlutterFlowTheme.primaryColor,
+                  textStyle: FlutterFlowTheme.subtitle2.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                  ),
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
+                  ),
+                  borderRadius: 12,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 23, 0, 0),
+              child: FFButtonWidget(
+                onPressed: () async {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WatchWidget(
+                        watchContent: '',
+                      ),
+                    ),
+                  );
+                },
+                text: 'Watch',
+                options: FFButtonOptions(
+                  width: 130,
+                  height: 40,
+                  color: FlutterFlowTheme.primaryColor,
+                  textStyle: FlutterFlowTheme.subtitle2.override(
+                    fontFamily: 'Poppins',
+                    color: Colors.white,
+                  ),
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
+                  ),
+                  borderRadius: 12,
+                ),
+              ),
             )
           ],
         ),
