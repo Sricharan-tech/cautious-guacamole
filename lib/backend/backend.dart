@@ -8,12 +8,14 @@ import 'schema/home_record.dart';
 import 'schema/education_record.dart';
 import 'schema/podcast_record.dart';
 import 'schema/movies_record.dart';
+import 'schema/ideas_record.dart';
 import 'schema/serializers.dart';
 
 export 'schema/home_record.dart';
 export 'schema/education_record.dart';
 export 'schema/podcast_record.dart';
 export 'schema/movies_record.dart';
+export 'schema/ideas_record.dart';
 
 Stream<List<HomeRecord>> queryHomeRecord(
         {Query Function(Query) queryBuilder,
@@ -41,6 +43,13 @@ Stream<List<MoviesRecord>> queryMoviesRecord(
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(MoviesRecord.collection, MoviesRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Stream<List<IdeasRecord>> queryIdeasRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(IdeasRecord.collection, IdeasRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

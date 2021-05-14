@@ -2,31 +2,31 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_video_player.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_book/home_book_widget.dart';
 import '../main.dart';
+import '../movie_book/movie_book_widget.dart';
 import '../watch/watch_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeDetailsPageWidget extends StatefulWidget {
-  HomeDetailsPageWidget(
+class MovieDetailsPageWidget extends StatefulWidget {
+  MovieDetailsPageWidget(
       {Key key,
       this.detailText,
       this.trailerVideo,
       this.watch,
-      this.linkForBook})
+      this.linkforBook})
       : super(key: key);
 
-  final HomeRecord detailText;
+  final MoviesRecord detailText;
   final String trailerVideo;
   final String watch;
-  final String linkForBook;
+  final String linkforBook;
 
   @override
-  _HomeDetailsPageWidgetState createState() => _HomeDetailsPageWidgetState();
+  _MovieDetailsPageWidgetState createState() => _MovieDetailsPageWidgetState();
 }
 
-class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
+class _MovieDetailsPageWidgetState extends State<MovieDetailsPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -136,8 +136,8 @@ class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeBookWidget(
-                        linkforBook: '',
+                      builder: (context) => MovieBookWidget(
+                        linkForBook: widget.linkforBook,
                       ),
                     ),
                   );

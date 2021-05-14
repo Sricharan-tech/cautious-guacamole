@@ -55,7 +55,7 @@ class _PodcastPageWidgetState extends State<PodcastPageWidget> {
                     padding: EdgeInsets.zero,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 0.1,
+                      crossAxisSpacing: 150,
                       mainAxisSpacing: 5,
                       childAspectRatio: 1,
                     ),

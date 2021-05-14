@@ -28,6 +28,10 @@ abstract class HomeRecord implements Built<HomeRecord, HomeRecordBuilder> {
   String get watch;
 
   @nullable
+  @BuiltValueField(wireName: 'LinkForBook')
+  String get linkForBook;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -35,7 +39,8 @@ abstract class HomeRecord implements Built<HomeRecord, HomeRecordBuilder> {
     ..image = ''
     ..detailsText = ''
     ..trailerVideo = ''
-    ..watch = '';
+    ..watch = ''
+    ..linkForBook = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Home');
@@ -53,6 +58,7 @@ Map<String, dynamic> createHomeRecordData({
   String detailsText,
   String trailerVideo,
   String watch,
+  String linkForBook,
 }) =>
     serializers.serializeWith(
         HomeRecord.serializer,
@@ -60,14 +66,16 @@ Map<String, dynamic> createHomeRecordData({
           ..image = image
           ..detailsText = detailsText
           ..trailerVideo = trailerVideo
-          ..watch = watch));
+          ..watch = watch
+          ..linkForBook = linkForBook));
 
 HomeRecord get dummyHomeRecord {
   final builder = HomeRecordBuilder()
     ..image = dummyImagePath
     ..detailsText = dummyString
     ..trailerVideo = dummyVideoPath
-    ..watch = dummyVideoPath;
+    ..watch = dummyVideoPath
+    ..linkForBook = dummyString;
   return builder.build();
 }
 

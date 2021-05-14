@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'auth/firebase_user_provider.dart';
-import 'package:educationaries_app/login_page/login_page_widget.dart';
+import 'package:e_n_stores/login_page/login_page_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'home_page/home_page_widget.dart';
@@ -24,20 +24,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Stream<EducationariesAppFirebaseUser> userStream;
-  EducationariesAppFirebaseUser initialUser;
+  Stream<ENStoresFirebaseUser> userStream;
+  ENStoresFirebaseUser initialUser;
 
   @override
   void initState() {
     super.initState();
-    userStream = educationariesAppFirebaseUserStream()
+    userStream = eNStoresFirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Educationaries App',
+      title: 'EN Stores',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: initialUser == null
           ? const Center(
@@ -118,7 +118,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.headset_mic,
               size: 24,
             ),
-            label: 'Home',
+            label: 'Support',
           ),
           BottomNavigationBarItem(
             icon: Icon(

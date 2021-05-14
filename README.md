@@ -1,4 +1,4 @@
-# educationaries_app
+# e_n_stores
 
 A new Flutter project.
 

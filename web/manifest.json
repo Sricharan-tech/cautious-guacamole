@@ -1,6 +1,6 @@
 {
-    "name": "educationaries_app",
-    "short_name": "educationaries_app",
+    "name": "e_n_stores",
+    "short_name": "e_n_stores",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

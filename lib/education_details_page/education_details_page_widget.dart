@@ -1,32 +1,34 @@
 import '../backend/backend.dart';
+import '../education_book/education_book_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_video_player.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_book/home_book_widget.dart';
 import '../main.dart';
 import '../watch/watch_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeDetailsPageWidget extends StatefulWidget {
-  HomeDetailsPageWidget(
+class EducationDetailsPageWidget extends StatefulWidget {
+  EducationDetailsPageWidget(
       {Key key,
       this.detailText,
       this.trailerVideo,
-      this.watch,
-      this.linkForBook})
+      this.linkForBook,
+      this.watch})
       : super(key: key);
 
-  final HomeRecord detailText;
+  final String detailText;
   final String trailerVideo;
-  final String watch;
   final String linkForBook;
+  final String watch;
 
   @override
-  _HomeDetailsPageWidgetState createState() => _HomeDetailsPageWidgetState();
+  _EducationDetailsPageWidgetState createState() =>
+      _EducationDetailsPageWidgetState();
 }
 
-class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
+class _EducationDetailsPageWidgetState
+    extends State<EducationDetailsPageWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -79,7 +81,7 @@ class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) =>
-                                    NavBarPage(initialPage: 'HomePage'),
+                                    NavBarPage(initialPage: 'EducationPage'),
                               ),
                             );
                           },
@@ -115,7 +117,7 @@ class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
                             padding:
                                 EdgeInsets.fromLTRB(55, 1, 82398439839898, 0),
                             child: Text(
-                              widget.detailText.detailsText,
+                              widget.detailText,
                               style: FlutterFlowTheme.title1.override(
                                 fontFamily: 'Poppins',
                                 fontSize: 32,
@@ -136,8 +138,8 @@ class _HomeDetailsPageWidgetState extends State<HomeDetailsPageWidget> {
                   await Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeBookWidget(
-                        linkforBook: '',
+                      builder: (context) => EducationBookWidget(
+                        linkforBook: widget.linkForBook,
                       ),
                     ),
                   );

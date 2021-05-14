@@ -18,11 +18,31 @@ abstract class EducationRecord
   String get image;
 
   @nullable
+  @BuiltValueField(wireName: 'DetailsText')
+  String get detailsText;
+
+  @nullable
+  @BuiltValueField(wireName: 'TrailerVideo')
+  String get trailerVideo;
+
+  @nullable
+  @BuiltValueField(wireName: 'Watch')
+  String get watch;
+
+  @nullable
+  @BuiltValueField(wireName: 'LinkForBook')
+  String get linkForBook;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
-  static void _initializeBuilder(EducationRecordBuilder builder) =>
-      builder..image = '';
+  static void _initializeBuilder(EducationRecordBuilder builder) => builder
+    ..image = ''
+    ..detailsText = ''
+    ..trailerVideo = ''
+    ..watch = ''
+    ..linkForBook = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Education');
@@ -38,12 +58,27 @@ abstract class EducationRecord
 
 Map<String, dynamic> createEducationRecordData({
   String image,
+  String detailsText,
+  String trailerVideo,
+  String watch,
+  String linkForBook,
 }) =>
     serializers.serializeWith(
-        EducationRecord.serializer, EducationRecord((e) => e..image = image));
+        EducationRecord.serializer,
+        EducationRecord((e) => e
+          ..image = image
+          ..detailsText = detailsText
+          ..trailerVideo = trailerVideo
+          ..watch = watch
+          ..linkForBook = linkForBook));
 
 EducationRecord get dummyEducationRecord {
-  final builder = EducationRecordBuilder()..image = dummyImagePath;
+  final builder = EducationRecordBuilder()
+    ..image = dummyImagePath
+    ..detailsText = dummyString
+    ..trailerVideo = dummyVideoPath
+    ..watch = dummyVideoPath
+    ..linkForBook = dummyString;
   return builder.build();
 }
 

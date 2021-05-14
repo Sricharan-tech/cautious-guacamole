@@ -53,7 +53,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     padding: EdgeInsets.zero,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 70,
+                      crossAxisSpacing: 150,
                       mainAxisSpacing: 5,
                       childAspectRatio: 1,
                     ),
@@ -79,6 +79,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       trailerVideo:
                                           gridViewHomeRecord.trailerVideo,
                                       watch: gridViewHomeRecord.watch,
+                                      linkForBook:
+                                          gridViewHomeRecord.linkForBook,
                                     ),
                                   ),
                                 );

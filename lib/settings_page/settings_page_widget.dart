@@ -1,5 +1,6 @@
 import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -69,6 +70,28 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                     ],
                   ),
                   Padding(
+                    padding: EdgeInsets.fromLTRB(123, 0, 0, 0),
+                    child: FFButtonWidget(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      text: 'Sign Out',
+                      options: FFButtonOptions(
+                        width: 130,
+                        height: 40,
+                        color: Colors.white,
+                        textStyle: FlutterFlowTheme.subtitle1.override(
+                          fontFamily: 'Poppins',
+                        ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: 12,
+                      ),
+                    ),
+                  ),
+                  Padding(
                     padding: EdgeInsets.fromLTRB(0, 32, 0, 0),
                     child: Container(
                       height: 45,
@@ -79,41 +102,49 @@ class _SettingsPageWidgetState extends State<SettingsPageWidget> {
                         ),
                       ),
                     ),
+                  ),
+                  Divider(
+                    color: Color(0xFF8E8D8D),
                   )
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(122, 1, 150, 112222),
+              padding: EdgeInsets.fromLTRB(0, 180, 0, 12),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      print('IconButton pressed ...');
-                    },
-                    icon: Icon(
-                      Icons.wb_sunny,
-                      color: Colors.black,
-                      size: 30,
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
+                    child: Text(
+                      'Privacy Policy',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: Color(0xFF8E8D8D),
+                      ),
                     ),
-                    iconSize: 30,
                   ),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(12, 1, 0, 1),
-                    child: IconButton(
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
-                      icon: Icon(
-                        Icons.nights_stay,
-                        color: Colors.black,
-                        size: 30,
+                    padding: EdgeInsets.fromLTRB(80, 0, 0, 0),
+                    child: Text(
+                      'Terms & Conditions',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: Color(0xFF8E8D8D),
                       ),
-                      iconSize: 30,
                     ),
                   )
                 ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 1),
+              child: Text(
+                'Verison 1',
+                style: FlutterFlowTheme.bodyText1.override(
+                  fontFamily: 'Poppins',
+                  color: Color(0xFF8E8D8D),
+                ),
               ),
             )
           ],

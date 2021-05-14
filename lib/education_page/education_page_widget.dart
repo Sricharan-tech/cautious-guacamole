@@ -1,4 +1,5 @@
 import '../backend/backend.dart';
+import '../education_details_page/education_details_page_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,7 +56,7 @@ class _EducationPageWidgetState extends State<EducationPageWidget> {
                     padding: EdgeInsets.zero,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 70,
+                      crossAxisSpacing: 150,
                       mainAxisSpacing: 5,
                       childAspectRatio: 1,
                     ),
@@ -90,11 +91,30 @@ class _EducationPageWidgetState extends State<EducationPageWidget> {
                             }
                             final imageEducationRecord =
                                 imageEducationRecordList.first;
-                            return Image.network(
-                              imageEducationRecord.image,
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
+                            return InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        EducationDetailsPageWidget(
+                                      detailText:
+                                          gridViewEducationRecord.detailsText,
+                                      trailerVideo:
+                                          gridViewEducationRecord.trailerVideo,
+                                      linkForBook:
+                                          gridViewEducationRecord.linkForBook,
+                                      watch: gridViewEducationRecord.watch,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Image.network(
+                                imageEducationRecord.image,
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
+                              ),
                             );
                           },
                         ),
